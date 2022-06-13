@@ -1,3 +1,4 @@
+var todoList = document.getElementById("todo-list");
 let form = document.querySelector("form");
 form.onsubmit = handleSubmitForm;
 
@@ -18,13 +19,12 @@ function handleClickDelete(e) {
 }
 
 function addTodo(str) {
-  let todoListUl = document.getElementById("todo-list");
   let li = document.createElement("li");
   let button = document.createElement("button");
 
   button.appendChild(document.createTextNode(str));
   li.appendChild(button);
-  todoListUl.appendChild(li);
+  todoList.appendChild(li);
 
-  li.onclick = handleClickDelete;
+  button.onclick = handleClickDelete;
 }
